@@ -9,10 +9,10 @@
 require 'httparty'
 
 url = "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&pretty=true&client_id=ewGvicQBqR"
-
+byebug
 response = HTTParty.get(url)
 
-byebug
+
 
 User.destroy_all
 Community.destroy_all
