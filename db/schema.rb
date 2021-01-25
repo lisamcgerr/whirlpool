@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_181246) do
+ActiveRecord::Schema.define(version: 2021_01_25_224923) do
 
   create_table "communities", force: :cascade do |t|
     t.string "title"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "public", default: false
   end
 
   create_table "games", force: :cascade do |t|
@@ -25,6 +26,11 @@ ActiveRecord::Schema.define(version: 2021_01_25_181246) do
     t.integer "max_players"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "price"
+    t.integer "min_age"
+    t.text "description"
+    t.float "avg_playtime"
+    t.string "rules"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -61,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_181246) do
     t.string "profile_picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "age"
   end
 
   add_foreign_key "sessions", "games"
