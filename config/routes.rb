@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_sessions
   resources :sessions
   resources :user_communities
   resources :communities
