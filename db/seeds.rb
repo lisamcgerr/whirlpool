@@ -9,7 +9,7 @@
 require 'httparty'
 
 url = "https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&pretty=true&client_id=ewGvicQBqR"
-byebug
+# byebug
 response = HTTParty.get(url)
 
 
@@ -26,22 +26,40 @@ UserSession.destroy_all
         name: Faker::Name.name, 
         username: Faker::Internet.username, 
         password: Faker::Internet.password, 
-        email: Faker::Internet.safe_email)
+        email: Faker::Internet.safe_email,
+        age: Faker::Number.within(range: 8..16)
+    )
 end
 
 20.times do
+
+    bool = [true, false]
+
     Community.create(
         title:  "#{Faker::Game.title} Community",
-        bio: Faker::Hipster.paragraph(sentence_count: 2)
+        bio: Faker::Hipster.paragraph(sentence_count: 2),
+        public: bool.sample
     )
 end
 
+
+count = 0
+
 20.times do
+
+    average_playtime = (response["games"][count]["min_playtime"].to_f + response["games"][count]["max_playtime"].to_f) / 2
+
     Game.create(
-        title: Faker::Game.title,
-        min_players: Faker::Number.within(range: 2..4),
-        max_players: Faker::Number.within(range: 4..8)
+        title: response["games"][count]["name"],
+        min_players: response["games"][count]["min_players"],
+        max_players: response["games"][count]["max_players"],
+        price: response["games"][count]["msrp"],
+        min_age: response["games"][count]["min_age"],
+        description: response["games"][count]["description"],
+        avg_playtime: average_playtime,
+        rules: response["games"][count]["rules_url"]
     )
+    count +=1
 end
 
 
@@ -52,6 +70,10 @@ end
         game_id: game.id
     )
 end
+
+
+
+
 
 30.times do
     community = Community.all.sample
