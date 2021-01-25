@@ -31,18 +31,6 @@ UserSession.destroy_all
     )
 end
 
-20.times do
-
-    bool = [true, false]
-
-    Community.create(
-        title:  "#{Faker::Game.title} Community",
-        bio: Faker::Hipster.paragraph(sentence_count: 2),
-        public: bool.sample
-    )
-end
-
-
 count = 0
 
 20.times do
@@ -62,6 +50,16 @@ count = 0
     count +=1
 end
 
+20.times do
+
+    bool = [true, false]
+
+    Community.create(
+        title:  "#{Game.all.sample.title} Community",
+        bio: "We are a community of fans who love to play #{Game.all.sample.title}.",
+        public: bool.sample
+    )
+end
 
 20.times do
     game = Game.all.sample
@@ -70,10 +68,6 @@ end
         game_id: game.id
     )
 end
-
-
-
-
 
 30.times do
     community = Community.all.sample
