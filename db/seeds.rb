@@ -22,14 +22,14 @@ UserSession.destroy_all
         email: Faker::Internet.safe_email)
 end
 
-10.times do
+20.times do
     Community.create(
         title:  "#{Faker::Game.title} Community",
         bio: Faker::Hipster.paragraph(sentence_count: 2)
     )
 end
 
-10.times do
+20.times do
     Game.create(
         title: Faker::Game.title,
         min_players: Faker::Number.within(range: 2..4),
@@ -38,23 +38,35 @@ end
 end
 
 
-10.times do
+20.times do
+    game = Game.all.sample
     Session.create(
         date: Faker::Date.forward(days: 30),
-        game_id: Game.all.sample
+        game_id: game.id
     )
 end
 
-10.times do
-    UserCommunity.create(
-        user_id: User.all.sample,
-        community_id: Community.all.sample
+30.times do
+    community = Community.all.sample
+    user = User.all.sample
+    UserCommunity.find_or_create_by(
+        user_id: user.id,
+        community_id: community.id
     )
 end
 
-10.times do
-    UserSession.create(
-        user_id: User.all.sample,
-        session_id: Session.all.sample
+30.times do
+    user = User.all.sample
+    session = Session.all.sample
+    UserSession.find_or_create_by(
+        user_id: user.id,
+        session_id: session.id
     )
 end
+
+puts "#{User.all.count} users"
+puts "#{Game.all.count} games"
+puts "#{Community.all.count} communities"
+puts "#{Session.all.count} sessions"
+puts "#{UserCommunity.all.count} user_communities"
+puts "#{UserSession.all.count} user_sessions"
