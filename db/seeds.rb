@@ -16,45 +16,45 @@ UserSession.destroy_all
 
 10.times do
     User.create(
-        name: , 
-        username: , 
-        password: , 
-        email: ,)
+        name: Faker::Name.name, 
+        username: Faker::Internet.username, 
+        password: Faker::Internet.password, 
+        email: Faker::Internet.safe_email)
 end
 
 10.times do
     Community.create(
-        title: ,
-        bio: ,
+        title:  "#{Faker::Game.title} Community",
+        bio: Faker::Hipster.paragraph(sentence_count: 2)
     )
 end
 
 10.times do
     Game.create(
-        title: ,
-        min_player: ,
-        max_player: ,
+        title: Faker::Game.title,
+        min_players: Faker::Number.within(range: 2..4),
+        max_players: Faker::Number.within(range: 4..8)
     )
 end
 
 
 10.times do
     Session.create(
-        date: ,
-        game_id: ,
+        date: Faker::Date.forward(days: 30),
+        game_id: Game.all.sample
     )
 end
 
 10.times do
     UserCommunity.create(
-        user_id: ,
-        community_id: ,
+        user_id: User.all.sample,
+        community_id: Community.all.sample
     )
 end
 
 10.times do
     UserSession.create(
-        user_id: ,
-        session_id: ,
+        user_id: User.all.sample,
+        session_id: Session.all.sample
     )
 end
