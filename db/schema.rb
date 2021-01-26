@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_224923) do
+ActiveRecord::Schema.define(version: 2021_01_26_022427) do
 
   create_table "communities", force: :cascade do |t|
     t.string "title"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_224923) do
     t.integer "game_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "public", default: false
     t.index ["game_id"], name: "index_sessions_on_game_id"
   end
 

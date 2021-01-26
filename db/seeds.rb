@@ -21,7 +21,7 @@ Session.destroy_all
 UserCommunity.destroy_all
 UserSession.destroy_all
 
-10.times do
+15.times do
     User.create(
         name: Faker::Name.name, 
         username: Faker::Internet.username, 
@@ -51,18 +51,20 @@ count = 0
     count +=1
 end
 
-20.times do
+30.times do
 
     bool = [true, false]
 
+    community_type = [Game.all.sample.title, "Board Game", "TTRPG", "Party Game"]
+
     Community.create(
-        title:  "#{Game.all.sample.title} Community",
+        title:  "#{community_type.sample} Community",
         bio: "We are a community of fans who love to play #{Game.all.sample.title}.",
         public: bool.sample
     )
 end
 
-20.times do
+50.times do
     game = Game.all.sample
     Session.create(
         date: Faker::Date.forward(days: 30),
@@ -70,7 +72,7 @@ end
     )
 end
 
-30.times do
+60.times do
     community = Community.all.sample
     user = User.all.sample
     UserCommunity.find_or_create_by(
@@ -79,7 +81,7 @@ end
     )
 end
 
-30.times do
+80.times do
     user = User.all.sample
     session = Session.all.sample
     UserSession.find_or_create_by(

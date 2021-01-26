@@ -1,1 +1,33 @@
 <h1><%= @user.username %></h1>
+
+
+<h3>Communities:</h3>
+<ul>
+    <% @user.communities.each do |community|%>
+        <% if community.public %>
+                <li><%= link_to community.title, community_path(community) %></li>
+            <% end %>
+    <% end %>
+</ul>
+
+<h3>Game History:</h3>
+
+<% #games = [] %>
+
+<% if false %>
+    <% @user.communities.each do |community|%>
+        <% if community.public %>
+                <% games << community.game %>
+            <% end %>
+    <% end %>
+<% end %>
+
+<ul>
+    <% @user.sessions.each do |session|%>
+        <% #if session.public %>
+                <li><%= link_to session.game.title, game_path(session.game) %></li>
+        <% #end %>
+    <% end %>
+    <% #byebug %>
+
+</ul>
