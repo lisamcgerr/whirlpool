@@ -12,14 +12,16 @@
     <nav class = "top-nav">
       <%= button_to "Communities", communities_path, method: :get %>
       <%= button_to "Games", games_path, method: :get %>
-      <%= button_to "Profiles", users_path, method: :get %>
       <%= button_to "New Session", new_session_path, method: :get %>
       <% if !session[:user_id] %>
           <%= button_to "Create Account", new_user_path, method: :get %>
+          <%= button_to "Login", login_path, method: :get %>
         <% else %>
-        <%# logout button %>
+        <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get %>
+        <%= button_to "Logout", logout_path, method: :post %>
       <% end %>
     </nav>
+    <%= flash.alert %>
   <body>
     
 
