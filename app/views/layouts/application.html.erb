@@ -13,6 +13,12 @@
       <%= button_to "Communities", communities_path, method: :get %>
       <%= button_to "Games", games_path, method: :get %>
       <%= button_to "Profiles", users_path, method: :get %>
+      <%= button_to "New Session", new_session_path, method: :get %>
+      <% if !session[:user_id] %>
+          <%= button_to "Create Account", new_user_path, method: :get %>
+        <% else %>
+        <%# logout button %>
+      <% end %>
     </nav>
   <body>
     

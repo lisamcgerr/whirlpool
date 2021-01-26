@@ -8,4 +8,6 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :age, numericality: { greater_than: 7}
 
+    has_secure_password
+
 end

@@ -21,11 +21,11 @@ Session.destroy_all
 UserCommunity.destroy_all
 UserSession.destroy_all
 
+#user
 15.times do
     User.create(
         name: Faker::Name.name, 
         username: Faker::Internet.username, 
-        password: Faker::Internet.password, 
         email: Faker::Internet.safe_email,
         age: Faker::Number.within(range: 8..16)
     )
@@ -33,6 +33,7 @@ end
 
 count = 0
 
+#game
 20.times do
 
     average_playtime = (response["games"][count]["min_playtime"].to_f + response["games"][count]["max_playtime"].to_f) / 2
@@ -51,6 +52,7 @@ count = 0
     count +=1
 end
 
+#community
 30.times do
 
     bool = [true, false]
@@ -64,6 +66,7 @@ end
     )
 end
 
+#session
 50.times do
     game = Game.all.sample
     Session.create(
@@ -73,6 +76,7 @@ end
     )
 end
 
+#UserCommunity
 60.times do
     community = Community.all.sample
     user = User.all.sample
@@ -82,6 +86,7 @@ end
     )
 end
 
+#UserSession
 80.times do
     user = User.all.sample
     session = Session.all.sample
