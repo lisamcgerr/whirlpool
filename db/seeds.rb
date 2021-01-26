@@ -43,6 +43,7 @@ count = 0
         max_players: response["games"][count]["max_players"],
         price: response["games"][count]["msrp"],
         min_age: response["games"][count]["min_age"],
+        #parse description here
         description: response["games"][count]["description"],
         avg_playtime: average_playtime,
         rules: response["games"][count]["rules_url"]
