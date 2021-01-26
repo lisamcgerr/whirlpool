@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :user_communities
   resources :communities
   resources :games
-  # resources :users
+  resources :users
 
   get "/users/login", to: "users#login"
   post "users/login", to: "users#authenticate"

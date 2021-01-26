@@ -1,0 +1,10 @@
+<h1>Welcome to <%= @community.title %></h1>
+
+<p><%= @community.bio %> </p><div>
+
+<ul>
+    <h3>Members</h3>
+    <% @community.users.each do |user|%>
+        <li><%= link_to user.username, user_path(user) %></li>
+    <% end %>
+</ul>
