@@ -1,0 +1,7 @@
+<h1>Community Index</h1>
+
+<ul>
+<% @communities.each do |community|%>
+    <li><%= link_to community.title, community_path(community) %></li>
+<% end %>
+</ul>
