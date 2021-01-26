@@ -19,8 +19,11 @@
         <% else %>
         <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get %>
         <%= button_to "Logout", logout_path, method: :post %>
-      <% end %>
+      <% end %><br>
     </nav>
+    <% if session[:user_id] %>
+      <h4>Logged in as <%= User.find_by(id: session[:user_id]).username %></h4>
+    <% end %>
     <%= flash.alert %>
   <body>
     
