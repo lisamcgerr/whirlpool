@@ -23,11 +23,14 @@
 <% end %>
 
 <ul>
-    <% @user.sessions.each do |session|%>
+    <% game_array = @user.sessions.map do |session|%>
         <% #if session.public %>
-                <li><%= link_to session.game.title, game_path(session.game) %></li>
+            <% session.game %>
         <% #end %>
     <% end %>
-    <% #byebug %>
+
+    <% game_array.uniq.each do |game| %>
+        <li><%= link_to game.title, game_path(game) %> - played <%= game_array.count(game) %> times</li>
+    <% end %>
 
 </ul>
