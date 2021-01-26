@@ -68,7 +68,8 @@ end
     game = Game.all.sample
     Session.create(
         date: Faker::Date.forward(days: 30),
-        game_id: game.id
+        game_id: game.id,
+        title: "#{game.title} Session"
     )
 end
 

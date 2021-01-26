@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ .top-nav {
+     background-color: rgba(13, 14, 13, 0);
+     display: flex;
+     flex-direction: row;
+ }

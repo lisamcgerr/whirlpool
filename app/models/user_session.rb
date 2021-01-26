@@ -4,10 +4,17 @@ class UserSession < ApplicationRecord
 
 
   validate :validate_age
+  validate :validate_players
 
   def validate_age
     if self.user.age < self.session.game.min_age
       self.errors[:age] << "User is too young to play this game."
+    end
+  end
+
+  def validate_players
+    if self.session.users.count > self.session.game.max_players
+      self.errors[:user] << "There are too many players for this game."
     end
   end
 

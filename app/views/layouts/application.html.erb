@@ -9,7 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
   </head>
-    <%= button_to "Communities", communities_path, method: :get %><%= button_to "Games", games_path, method: :get %><%= button_to "Profiles", users_path, method: :get %>
+    <nav class = "top-nav">
+      <%= button_to "Communities", communities_path, method: :get %>
+      <%= button_to "Games", games_path, method: :get %>
+      <%= button_to "Profiles", users_path, method: :get %>
+    </nav>
   <body>
     
 

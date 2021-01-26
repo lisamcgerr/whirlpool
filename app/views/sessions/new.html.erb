@@ -1,0 +1,9 @@
+<h1>Create a Gaming Session</h1>
+<%= form_for @session do |f|%>
+    <%= f.label :game %>
+    <%= f.collection_select :game_id, Game.all, :id, :title %>
+    <%= f.label :date %>
+    <%= f.datetime_select :date, :ampm => true, :minute_step => 15 %>
+
+    <%= f.submit %>
+<% end %>
