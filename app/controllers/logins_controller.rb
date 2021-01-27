@@ -10,7 +10,8 @@ class LoginsController < ApplicationController
             session[:user_id] = user.id
             redirect_to user_path(user)
         else
-            flash.alert = "Wrong Username or password."
+            flash.alert = []
+            flash.alert << ["Wrong Username or password."]
             redirect_to login_path
         end
         

@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
     end
 
     def show
+        @user_session = UserSession.new
         @session = Session.find_by(id: params[:id])
     end
 

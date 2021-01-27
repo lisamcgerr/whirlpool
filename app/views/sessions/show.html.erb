@@ -2,15 +2,25 @@
 
 <p>Session Date: <%= @session.date.strftime("%A, %B %e, %Y") %> at <%= @session.date.strftime("%I:%M %p") %></p>
 
-<p>Game: <%= @session.game.title %></p>
+<p>Game: <%= @session.game.title %><p>
+<p>Minimum Players: <%= @session.game.min_players %></p>
+<p>Maximum Players: <%= @session.game.max_players %></p>
+<p>Minimum Age: <%= @session.game.min_age %></p>
+
+
 
 <h3>Players</h3>
-<p><% @session.users.each do |user| %></p>
-    <%= link_to user.username, user_path(user) %>
+<% @session.users.each do |user| %>
+    <%= link_to user.username, user_path(user) %><br>
 <% end %>
 
 <% if @session.users.include?(User.find_by(id: session[:user_id])) %>
-<%= form_for %>
+<%= form_for(@user_session) do |f| %>
+    <h4><%= f.label :user, "Add Player to Session:" %><h4>
+    <%= f.collection_select(:user_id, User.all, :id, :username) %>
+    <%= f.hidden_field :session_id, :value => @session.id  %>
+    <%= f.submit %>
+<% end %>
 <% end %>
 
 <%# any public session should have a join button %>

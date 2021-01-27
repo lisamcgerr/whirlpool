@@ -25,7 +25,13 @@
     <% if session[:user_id] %>
       <h4>Logged in as <%= User.find_by(id: session[:user_id]).username %></h4>
     <% end %>
-    <%= flash.alert %>
+    <ul>
+      <% if flash.alert %>
+        <% flash.alert.each do |error| %>
+          <li><%= error.first %></li>
+        <% end %>
+      <% end %>
+    </ul>
   <body>
     
 
