@@ -2,6 +2,7 @@
 <%= form_for @session do |f|%>
     <%= f.label :game %>
     <%# add game length to collection, and age %>
+    <%# add somwway to pre-add some friends %>
     <%= f.collection_select :game_id, Game.all, :id, :title %><br>
     <%= f.label :date %>
     <%= f.datetime_select :date, :ampm => true, :minute_step => 15 %><br>

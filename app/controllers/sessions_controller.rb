@@ -16,7 +16,10 @@ class SessionsController < ApplicationController
         else
             render :new
         end
-        
+    end
+
+    def show
+        @session = Session.find_by(id: params[:id])
     end
 
 

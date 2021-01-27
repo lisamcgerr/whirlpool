@@ -1,1 +1,12 @@
-<h1>We made it</h1>
+<h1>Session: <%= @session.title %></h1>
+
+<p>Session Date: <%= @session.date.strftime("%A, %B %e, %Y") %> at <%= @session.date.strftime("%I:%M %p") %></p>
+
+<p>Game: <%= @session.game.title %></p>
+
+<h3>Players</h3>
+<p><% @session.users.each do |user| %></p>
+    <%= link_to user.username, user_path(user) %>
+<% end %>
+
+<%# any public session should have a join button %>
