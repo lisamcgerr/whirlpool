@@ -37,3 +37,13 @@
     <% end %>
 
 </ul>
+
+<h3>Sessions:</h3>
+
+    <% @user.sessions.each do |session|%>
+    <ul>
+                <li><%= link_to session.title, session_path(session) %></li>
+                <li><%= session.date.strftime("%A, %B %e, %Y at %I:%M %p") %></li>
+   </ul>
+    <% end %>
+
