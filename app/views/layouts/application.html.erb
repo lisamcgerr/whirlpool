@@ -11,6 +11,7 @@
     
   </head>
     <nav class = "top-nav">
+     <%= button_to "Home", home_path, method: :get %>
       <%= button_to "Communities", communities_path, method: :get %>
       <%= button_to "Games", games_path, method: :get %>
       <% if !session[:user_id] %>

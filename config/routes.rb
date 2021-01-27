@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "/", to: "application#index", as: "home"
+  
+  
   resources :user_sessions
   resources :sessions
   resources :user_communities
