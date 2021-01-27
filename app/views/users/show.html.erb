@@ -1,8 +1,14 @@
 <h1><%= @user.username %></h1>
 
-<% if session[:user_id] == @user.id %>
-    <h1>Hello<h1>
-    <% end %>
+
+<% if @user == (User.find_by(id: session[:user_id])) %>
+    <%= button_to "Edit User", edit_user_path(@user), method: :get%>
+<% end %>
+
+<% if @user == (User.find_by(id: session[:user_id])) %>
+    <%= button_to "Delete Profile", "/users/#{@user.id}", method: :delete %>
+<% end %>
+
 
 <h3>Communities:</h3>
 <ul>
