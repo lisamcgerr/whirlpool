@@ -28,6 +28,25 @@ class SessionsController < ApplicationController
         @session = Session.find_by(id: params[:id])
     end
 
+    def edit
+        @session = Session.find_by(id: params[:id])
+    end
+
+    def update
+        session = Session.find_by(id: params[:id])
+
+        if session.update(session_params)
+                redirect_to session_path(session)
+        else
+            render :edit
+        end
+    end
+
+    def remove_user
+        @session = Session.find_by(id: params[:id])
+        byebug
+    end
+
     private
     def session_params
         params["session"]["date"] = generate_date(params) 

@@ -1,7 +1,10 @@
 <h1>Session: <%= @session.title %></h1>
 
-<p>Session Date: <%= @session.date.strftime("%A, %B %e, %Y at %I:%M %p") %></p>
+<% if @session.users.include?(User.find_by(id: session[:user_id])) %>
+    <%= button_to "Edit Session", edit_session_path(@session), method: :get%>
+<% end %>
 
+<p>Session Date: <%= @session.date.strftime("%A, %B %e, %Y at %I:%M %p") %></p>
 <p>Game: <%= @session.game.title %><p>
 <p>Minimum Players: <%= @session.game.min_players %></p>
 <p>Maximum Players: <%= @session.game.max_players %></p>
@@ -15,12 +18,15 @@
 <% end %>
 
 <% if @session.users.include?(User.find_by(id: session[:user_id])) %>
-<%= form_for(@user_session) do |f| %>
-    <h4><%= f.label :user, "Add Player to Session:" %><h4>
-    <%= f.collection_select(:user_id, User.all, :id, :username) %>
-    <%= f.hidden_field :session_id, :value => @session.id  %>
-    <%= f.submit "Add Player" %>
-<% end %>
+    <%= form_for(@user_session) do |f| %>
+        <h4><%= f.label :user, "Add Player to Session:" %><h4>
+        <%= f.collection_select(:user_id, User.all, :id, :username) %>
+        <%= f.hidden_field :session_id, :value => @session.id  %>
+        <%= f.submit "Add Player" %>
+    <% end %>
 <% end %>
 
+<% if @session.users.include?(User.find_by(id: session[:user_id])) %>
+    <%= button_to "Remove User", remove_user_path(@session), method: :get%>
+<% end %>
 <%# any public session should have a join button %>
