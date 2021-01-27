@@ -19,7 +19,7 @@ class LoginsController < ApplicationController
 
     def logout
         session.delete :user_id
-        redirect_to (games_path)
+        redirect_to (home_path)
     end
 
     private

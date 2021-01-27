@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   resources :games
   resources :users
   
-
   get "/login", to: "logins#new"
   post "/login", to: "logins#create"
-  post "/logout", to: "logins#logout"
+  delete "/logout", to: "logins#logout"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

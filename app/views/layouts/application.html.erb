@@ -21,7 +21,7 @@
           <%= button_to "Sessions", sessions_path, method: :get %>
           <%= button_to "New Session", new_session_path, method: :get %>
           <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get %>
-          <%= button_to "Logout", logout_path, method: :post %>
+          <%= button_to "Logout", logout_path, method: :delete %>
       <% end %><br>
     </nav>
     <% if session[:user_id] %>

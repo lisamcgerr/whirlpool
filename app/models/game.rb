@@ -3,7 +3,7 @@ class Game < ApplicationRecord
     has_many :user_sessions, through: :sessions
 
     def self.top_played
-        users = self.all.max_by {|game| game.times_played}
+        self.all.max_by {|game| game.times_played}
     end
 
     def times_played
