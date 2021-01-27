@@ -1,5 +1,12 @@
 <h1>Create New Account</h1>
 
+    <% if @user.errors.any? %>
+        <h3><%= @user.errors.count %> errors</h3>
+        <% @user.errors.full_messages.each do |message|%>
+            <li><%= message %></li>
+        <% end %>
+    <% end %><br>
+
 <%= form_for(@user) do |f| %>
     <%= f.label :name, "Name:" %>
     <%= f.text_field :name %><br>
