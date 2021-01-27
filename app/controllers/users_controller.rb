@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 
         if @user.save
             redirect_to login_path
-            flash.alert = "Account created! Please login."
+            flash.alert = []
+            flash.alert << ["Account created! Please login."]
         else
             render :new
         end
