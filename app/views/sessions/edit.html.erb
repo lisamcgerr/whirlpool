@@ -1,10 +1,11 @@
-<h1>Create a Game Session</h1>
+<h1> Edit Session </h1>
+
 <%= form_for @session do |f|%>
-    <%= f.label :game %>
+    <%= f.label :game, "Change Game:" %>
     <%# add game length to collection, and age %>
     <%# add somwway to pre-add some friends %>
     <%= f.collection_select :game_id, Game.all, :id, :title %><br>
-    <%= f.label :date %>
+    <%= f.label :date, "Change Date:" %>
     <%= f.datetime_select :date, :ampm => true, :minute_step => 15 %><br>
     <%= f.label :public, "Open Session?" %>
     <%= f.check_box :public %><br>
