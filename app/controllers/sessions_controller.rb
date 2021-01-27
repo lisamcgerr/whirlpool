@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+
+    def index
+        @sessions = Session.public_sessions
+    end
+
     def new
         @session = Session.new
     end
@@ -17,12 +22,11 @@ class SessionsController < ApplicationController
             render :new
         end
     end
-
+    
     def show
         @user_session = UserSession.new
         @session = Session.find_by(id: params[:id])
     end
-
 
     private
     def session_params

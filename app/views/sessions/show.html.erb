@@ -19,7 +19,7 @@
     <h4><%= f.label :user, "Add Player to Session:" %><h4>
     <%= f.collection_select(:user_id, User.all, :id, :username) %>
     <%= f.hidden_field :session_id, :value => @session.id  %>
-    <%= f.submit %>
+    <%= f.submit "Add Player" %>
 <% end %>
 <% end %>
 
