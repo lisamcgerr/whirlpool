@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   post "/login", to: "logins#create"
   delete "/logout", to: "logins#logout"
 
-  get "/session/remove_user", to: "sessions#remove_user", as: "remove_user"
+  get "/session/:id", to: "sessions#remove_user", as: "remove_user"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

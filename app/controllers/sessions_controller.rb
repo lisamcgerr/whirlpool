@@ -44,7 +44,7 @@ class SessionsController < ApplicationController
 
     def remove_user
         @session = Session.find_by(id: params[:id])
-        byebug
+        # byebug
     end
 
     private
