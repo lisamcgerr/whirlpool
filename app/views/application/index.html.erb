@@ -1,3 +1,6 @@
 <h1>Home Page</h1>
 <h3>Top Played Games:</h3>
 <h3>Communities: </h3>
+<p><%= link_to Community.all.most_popular_community.title, community_path(Community.all.most_popular_community)  %></p>
+<p><%= Community.all.most_popular_community.bio  %></p>
+<p><%= Community.all.most_popular_community.users.count  %> members </p>
