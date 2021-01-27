@@ -13,8 +13,8 @@ class UserSession < ApplicationRecord
   end
 
   def validate_players
-    if self.session.users.count > self.session.game.max_players
-      self.errors[:user] << "There are too many players for this game."
+    if self.session.users.count >= self.session.game.max_players
+      self.errors[:user] << "Cannot add another player, max players reached for this game."
     end
   end
 
