@@ -27,7 +27,8 @@ UserSession.destroy_all
         name: Faker::Name.name, 
         username: Faker::Internet.username, 
         email: Faker::Internet.safe_email,
-        age: Faker::Number.within(range: 8..16)
+        age: Faker::Number.within(range: 8..16),
+        password_digest: Faker::Internet.password(min_length: 10, max_length: 15)
     )
 end
 
