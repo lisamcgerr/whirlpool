@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
     
     before_action :authorize
     skip_before_action :authorize, only: [:home]
+    helper_method :current_user
 
     def home
     end

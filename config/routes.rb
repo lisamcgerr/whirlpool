@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "logins#logout"
 
   get "/session/:id", to: "sessions#remove_user", as: "remove_user"
+
+  post "/community/:id", to: "communities#join_community", as: "join_community"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -6,11 +6,7 @@ class UserCommunitiesController < ApplicationController
     def create
         
     end
-    
-    private
 
-    def user_community_params
-        params.require
-    end
+    private
 
 end
