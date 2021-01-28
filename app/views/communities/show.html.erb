@@ -8,6 +8,6 @@
     <% end %>
 </ul>
 
-<% if @community.public && !current_user.communities.include?(@community)%>
+<% if @community.public && current_user && !current_user.communities.include?(@community)%>
     <%= button_to "Join Community", join_community_path(@community), method: :post %>
 <% end %>

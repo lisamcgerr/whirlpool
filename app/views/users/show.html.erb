@@ -54,8 +54,10 @@
 
     <% @user.sessions.each do |session|%>
     <ul>
-                <li><%= link_to session.title, session_path(session) %></li>
-                <li><%= session.date.strftime("%A, %B %e, %Y at %I:%M %p") %></li>
+        <%# if session.public && current_user != @user %>
+            <li><%= link_to session.title, session_path(session) %></li>
+            <li><%= session.date.strftime("%A, %B %e, %Y at %I:%M %p") %></li>
+        <%# end %>
    </ul>
     <% end %>
 
