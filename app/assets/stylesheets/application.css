@@ -14,7 +14,12 @@
  *= require_self
  */
  .top-nav {
-     background-color: rgba(13, 14, 13, 0);
-     display: flex;
-     flex-direction: row;
+    background-color: rgba(13, 14, 13, 0);
+    display: flex;
+    flex-direction: row;
+ }
+
+ .profile-pic {
+    max-width:50%;
+    height:auto;
  }

@@ -1,5 +1,16 @@
 <h1><%= @user.username %></h1>
 
+<style>
+    img {
+  width: 8%;
+  height: auto;
+  border-radius: 10%
+}
+</style>
+
+<% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar  %>
+<% end %>
 
 <% if @user == (User.find_by(id: session[:user_id])) %>
     <%= button_to "Edit User", edit_user_path(@user), method: :get%>
