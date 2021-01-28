@@ -5,7 +5,6 @@
     <h4><%= label_tag "Select Player to Remove:" %><h4>
 
     <%= collection_select(:user_session, :user_session_id, @user_sessions, :id, :username) %>
-    <%# hidden_field :session_id, :value => @session.id  %>
     <%= submit_tag "Remove Player" %>
 <% end %>
 

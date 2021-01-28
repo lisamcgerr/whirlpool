@@ -17,10 +17,14 @@ class UserSessionsController < ApplicationController
         user_session = UserSession.find_by(id: params[:user_session][:user_session_id])
 
         if user_session.delete
+            flash.alert = []
+            flash.alert << ["Player removed from session."]
             redirect_to session_path(user_session.session)
         else
-            render :
-
+            flash.alert = []
+            flash.alert << ["Unable to remove player"]
+            redirect_to remove_user_path(user_session.session)
+        end
     end
 
     private
