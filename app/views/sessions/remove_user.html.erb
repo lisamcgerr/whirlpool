@@ -1,8 +1,11 @@
-<h1>Remove Player<h1>
+<h1>Remove Player</h1>
 
-<%= form_for(@session) do |f| %>
-        <h4><%= f.label :user, "Select Player to Remove:" %><h4>
-        <%= f.collection_select(:user_id, User.all, :id, :username) %>
-        <%= f.hidden_field :session_id, :value => @session.id  %>
-        <%= f.submit "Remove Player" %>
-    <% end %>
+<%= form_tag("/user_sessions/:id", method: :delete) do %>
+
+    <h4><%= label_tag "Select Player to Remove:" %><h4>
+
+    <%= collection_select(:user_session, :user_session_id, @user_sessions, :id, :username) %>
+    <%# hidden_field :session_id, :value => @session.id  %>
+    <%= submit_tag "Remove Player" %>
+<% end %>
+

@@ -18,4 +18,8 @@ class UserSession < ApplicationRecord
     end
   end
 
+  def username
+    self.user.username
+  end
+
 end
