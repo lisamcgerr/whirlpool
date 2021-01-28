@@ -1,6 +1,10 @@
-<h1>Home Page</h1>
-<h3>Top Played Games:</h3>
-<h3>Communities: </h3>
+<h1>🌊 Whirlpool 🌊</h1>
+
+<p>Welcome to whirlpool, a platform for finding community around games.</p>
+
+To date, users have created <%= Community.all.count %> communities around <%= Game.all.count %> games and played <%= Session.all.count %> sessions.
+<h3>Top Played Game: <%= link_to Game.top_played.title, game_path(Game.top_played) %></h3>
+<h3>Community Slice: <%= link_to Community.most_popular_community.title, community_path(Community.most_popular_community) %></h3>
 <p><%= link_to Community.all.most_popular_community.title, community_path(Community.all.most_popular_community)  %></p>
 <p><%= Community.all.most_popular_community.bio  %></p>
 <p><%= Community.all.most_popular_community.users.count  %> members </p>
