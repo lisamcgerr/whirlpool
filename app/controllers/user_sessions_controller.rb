@@ -13,6 +13,16 @@ class UserSessionsController < ApplicationController
         end
     end
 
+    def destroy
+        user_session = UserSession.find_by(id: params[:user_session][:user_session_id])
+
+        if user_session.delete
+            redirect_to session_path(user_session.session)
+        else
+            render :
+
+    end
+
     private
 
     def user_session_params
