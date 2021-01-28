@@ -11,6 +11,7 @@
     
   </head>
     <nav class = "top-nav">
+
      <%= button_to "Home", home_path, method: :get %>
       <%= button_to "Communities", communities_path, method: :get %>
       <%= button_to "Games", games_path, method: :get %>
@@ -22,11 +23,13 @@
           <%= button_to "New Session", new_session_path, method: :get %>
           <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get %>
           <%= button_to "Logout", logout_path, method: :delete %>
-      <% end %><br>
+      <% end %>
+      
+      <% if session[:user_id] %>
+        <b>Logged in as <%= User.find_by(id: session[:user_id]).username %></b>
+      <% end %>
     </nav>
-    <% if session[:user_id] %>
-      <h4>Logged in as <%= User.find_by(id: session[:user_id]).username %></h4>
-    <% end %>
+    
     <ul>
       <% if flash.alert %>
         <% flash.alert.each do |error| %>

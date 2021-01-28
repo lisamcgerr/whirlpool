@@ -16,11 +16,6 @@
     <%= button_to "Edit User", edit_user_path(@user), method: :get%>
 <% end %>
 
-<% if @user == (User.find_by(id: session[:user_id])) %>
-    <%= button_to "Delete Profile", "/users/#{@user.id}", method: :delete %>
-<% end %>
-
-
 <h3>Communities:</h3>
 <ul>
     <% @user.communities.each do |community|%>
@@ -64,3 +59,6 @@
    </ul>
     <% end %>
 
+<% if @user == (User.find_by(id: session[:user_id])) %>
+    <%= button_to "Delete Profile", "/users/#{@user.id}", method: :delete %>
+<% end %>
