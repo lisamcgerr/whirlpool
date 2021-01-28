@@ -1,5 +1,7 @@
 class CommunitiesController < ApplicationController
 
+    skip_before_action :authorize, only: [:index, :show]
+
     def index
         @communities = Community.all
     end

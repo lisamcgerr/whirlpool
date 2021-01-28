@@ -1,11 +1,13 @@
 class GamesController < ApplicationController
 
+    skip_before_action :authorize, only: [:index, :show]
+
+
     def index
         @games = Game.all
     end
 
     def show
-        # byebug
         @game = Game.find_by(id: params[:id])
     end
 
