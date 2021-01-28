@@ -7,3 +7,7 @@
         <li><%= link_to user.username, user_path(user) %></li>
     <% end %>
 </ul>
+
+<% if @community.public %>
+    <%= button_to "Join Community", "/user_communities", method: :post %>
+<% end %>
