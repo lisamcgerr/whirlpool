@@ -13,6 +13,23 @@ class CommunitiesController < ApplicationController
     def create
 
         community = Community.new(community_params)
+
+        if community.save
+            user_community = community.user_communities.build(user_id: current_user.id)
+
+            if user_community.save
+                redirect_to community_path(community)
+            else
+                flash.alert = []
+                flash.alert << user_community.errors.full_messages
+                redirect_to new_community_path
+            end
+        else
+            flash.alert = []
+            flash.alert << community.errors.full_messages
+            redirect_to new_community_path
+        end
+
     end
 
     def show
