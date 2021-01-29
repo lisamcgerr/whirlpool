@@ -9,11 +9,12 @@
             <p class="splash-info">
                 Welcome to whirlpool, a platform for finding community around games.
             </p>
-                <% top_played_game = Game.top_played %>
-                <% hottest_community = Community.most_popular_community %>
+            <%# The top and hottest methods have become super expensive for some reason, disable for now%>
+                <%# top_played_game = Game.top_played %>
+                <%# hottest_community = Community.most_popular_community %>
 
                 <p class="splash-info" >To date, <%= User.all.count %> users have created <%= Community.all.count %> communities around <%= Game.all.count %> games and played <%= Session.all.count %> sessions.</p>
-                <h3 class="splash-highlights">Top Played Game: <%= link_to top_played_game.title, game_path(top_played_game) %></h3>
-                <h3 class="splash-highlights">Hottest Community: <%= link_to hottest_community.title, community_path(hottest_community) %></h3>
+                <h3 class="splash-highlights">Top Played Game: <%# link_to top_played_game.title, game_path(top_played_game) %></h3>
+                <h3 class="splash-highlights">Hottest Community: <%# link_to hottest_community.title, community_path(hottest_community) %></h3>
 
         </div>

@@ -28,9 +28,9 @@
           <% end %>
       <% end %>
 
-      <% if current_user %>
-        <%= image_tag current_user.avatar, class: "nav-avatar" %>
-      <% end %>
+      <%# if current_user.try(:avatar) %>
+        <%# image_tag current_user.avatar, class: "nav-avatar" %>
+      <%# end %>
     </nav>
     
     <ul>

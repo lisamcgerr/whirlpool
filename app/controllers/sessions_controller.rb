@@ -61,7 +61,7 @@ class SessionsController < ApplicationController
         else
             flash.alert = []
             flash.alert << user_session.errors.full_messages
-            redirect_to sesion_path(session)
+            redirect_to session_path(session)
         end
     end
 
