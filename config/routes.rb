@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :communities
   resources :games
   resources :users
-  resources :posts, only: [:create]
+  resources :posts, only: [:create, :show]
 
   get "/login", to: "logins#new"
   post "/login", to: "logins#create"

@@ -5,7 +5,7 @@
 <h3>Posts</h3>
 <ul>
     <% @community.posts.each do |post|%>
-        <li><%= post.content %></li>
+        <li><%= link_to post.title, post_path(post) %></li>
     <% end %>
 </ul>
 

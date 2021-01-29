@@ -11,12 +11,16 @@ class PostsController < ApplicationController
             redirect_to new_post_path
         end
     end
+
+    def show
+        @post = Post.find_by(id: params[:id])
+    end
     
     private
 
     def post_params
         params[:post][:user_id] = current_user.id
 
-        params.require(:post).permit(:content, :community_id, :user_id)
+        params.require(:post).permit(:content, :community_id, :user_id, :title)
     end
 end
