@@ -15,15 +15,18 @@
  */
 
 
-body{
+p{
 
-  
+font-family: Georgia, 'Times New Roman', Times, serif;
+
+
 }
 
 h3{
 
    font-family: Georgia, 'Times New Roman', Times, serif;
    font-size: 30px;
+   color: teal;
 
 }
 
@@ -43,7 +46,7 @@ ul{
 
    font-family: Georgia, 'Times New Roman', Times, serif;
    font-size: 25px;
-   list-style-type: circle;
+   list-style-type:circle;
    color: indianred;
 
 }
@@ -66,6 +69,15 @@ h1{
 @font-face {
    font-family: 'Lobster';
    src: url('Lobster-Regular.ttf') format('truetype');
+}
+
+.description{
+
+   font-size: 25px;
+   text-align: center;
+   margin-left: 150px;
+   margin-right: 150px;
+
 }
 
 .splash-highlights{
@@ -129,6 +141,14 @@ h1{
    text-align: center;
    width: 60%;
    margin-left: 110px;
+   color: black;
+  -webkit-text-fill-color: rgb(77, 70, 180); /* Will override color (regardless of order) */
+  text-shadow:
+   -1px -1px 0 ,  
+    1px -1px 0 ivory,
+    -1px 1px 0 ivory,
+     1px 1px 0 ivory;
+   
    /* border: 50px;
    border-radius: 50px;
    border: aquamarine; */
