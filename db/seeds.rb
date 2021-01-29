@@ -69,11 +69,14 @@ end
 
 #session
 50.times do
+
+    boolean = [true, false]
     game = Game.all.sample
     Session.create(
         date: Faker::Date.forward(days: 30),
         game_id: game.id,
-        title: "#{game.title} Session"
+        title: "#{game.title} Session",
+        public: boolean.sample
     )
 end
 

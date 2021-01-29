@@ -42,6 +42,10 @@ class UsersController < ApplicationController
         redirect_to home_path
     end
 
+    def new_post
+        @post = Post.new
+    end
+
     private
 
     def user_params

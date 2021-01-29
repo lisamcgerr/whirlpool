@@ -109,8 +109,10 @@ h1{
    display: flex;
    justify-content: space-around;
    color: rgb(11, 58, 187);
-   position: relative;
+   /* position: relative; */
    background-color:rgba(240, 128, 128, 0.527);
+   position:sticky;
+	top:0;
    /* margin-top: 50px; */
    /* border-radius: 0%; */
 
@@ -190,8 +192,8 @@ h1{
 
 .home-splash{
    background-color: #F9F6F6;
-   background-image: linear-gradient(#F9F6F6, #caeee6);
-   background-repeat;
+   /* background-image: linear-gradient(#F9F6F6, #151616); */
+   /* background-repeat; */
    background-size: auto  ;
 }
 

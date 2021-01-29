@@ -1,6 +1,14 @@
 <h2>Welcome to <%= @community.title %></h2>
 
-<p><%= @community.bio %> </p><div>
+<p><%= @community.bio %> </p>
+
+<h3>Posts</h3>
+<ul>
+    <% @community.posts.each do |post|%>
+        <li><%= post.content %></li>
+    <% end %>
+</ul>
+
 <h3>Members</h3>
 <ul>
     <% @community.users.each do |user|%>
@@ -10,4 +18,9 @@
 
 <% if @community.public && current_user && !current_user.communities.include?(@community)%>
     <%= button_to "Join Community", join_community_path(@community), method: :post %>
+<% end %>
+
+<%# give posts a title to display and link to %>
+<% if current_user && current_user.communities.include?(@community) %>
+    <%= button_to "New Post", new_post_path, method: :get %>
 <% end %>

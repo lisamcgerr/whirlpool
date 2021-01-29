@@ -1,0 +1,10 @@
+<h1>New Post</h1>
+
+<p>
+    <%= form_for @post do |f|%>
+        <%= f.label "Write Your New Post:" %><br>
+        <%= f.text_area :content %><br>
+        <%= f.hidden_field :community_id, value: params[:id] %>
+        <%= f.submit "Submit Post" %>
+    <% end %>
+    </p>

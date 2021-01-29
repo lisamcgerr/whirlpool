@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_043534) do
+ActiveRecord::Schema.define(version: 2021_01_29_061236) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +61,14 @@ ActiveRecord::Schema.define(version: 2021_01_28_043534) do
     t.string "rules"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.integer "community_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.datetime "date"
     t.integer "game_id", null: false
@@ -94,7 +102,6 @@ ActiveRecord::Schema.define(version: 2021_01_28_043534) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.string "profile_picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "age"
