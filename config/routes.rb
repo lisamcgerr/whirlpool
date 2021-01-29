@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   get "/", to: "application#home", as: "home"
   
   
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   resources :games
   resources :users
   resources :posts, only: [:create, :show]
+  resources :comments, only: [:new, :create]
 
   get "/login", to: "logins#new"
   post "/login", to: "logins#create"
