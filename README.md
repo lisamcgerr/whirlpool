@@ -13,11 +13,13 @@ The user in our application is a gamer who has the ability to invite other users
 
 Our application utilizes the following models:
 
-- **User:** a user has many user_sessions and user_communities. A User also has many communities through user_communities and sessions through user_sessions
+- **User:** a user has many user_sessions, user_communities, comments and posts. A User also has many communities through user_communities and sessions through user_sessions
 - **Game:** a game has many sessions and has many user_sessions through sessions
 - **Session:** a session belongs to a game, has many user_sessions, and has many users through user_sessions
 - **Community:** a community has many user_communities and has many users through user_communities 
 - **User_Session:** a user_sessions belongs to a user and a community 
+- **Post:** a post belongs to a user and community, and has many comments
+- **Comment:** a comment belongs to a user and a post
 
 
 ## **Instructions**
@@ -34,22 +36,15 @@ Our application utilizes the following models:
 ## **Navigation Bar**
 <img width="1006" alt="Navigation bar" src="https://user-images.githubusercontent.com/73184313/106295144-aa8af200-6215-11eb-8b72-918c6e8c0dbb.png">
 
-
-- **Communities:** with one click, a user can look at the public communities index, where there is a list of communities with links to each community's show page. Once on the show page, the user has the ability to read the community description and join the community of users.
+- **Communities:** with one click, a user can look at the public communities index, there is a list of communities with links to each community's show page. Once on the show page, the user has the ability to read the community description and join the community of users. If the user is part of the community they can create a post or leave a comment on the community's page.
  - **Games:** once clicked, a user is directed to the games index page, where there is a list of all the games offered. Every game has a link to the game's show page. Each games' show page has a brief description of the game, information regarding the minimum age requirements, number of players, price, average game time, and a link to the game's rules.
 - **Sessions:** clicking this button directs the user to a page that shows all of the public game sessions, with a link to the specific session where the user can click and join. Public sessions also show the number of players in the session followed by the maximum number of players allowed and the date and time of the session
-
-<img width="549" alt="Public Sessions title, Azul Open Session link, bulletpoints: players: 2/4, date: Friday, January 29, 2021 at 3:00 PM" src="https://user-images.githubusercontent.com/73184313/106292540-8f6ab300-6212-11eb-8a34-4f0720de9a21.png">
-
 - **New Session:** this button directs the user to a page where they can create a new game session by inputting information regarding the game title, date, open session (public or private), and session title. If public, this session will be posted on the sessions index page, where other users can join the session.
-
 <img width="665" alt="create a game session game: (dropdownmenu)selection of all the games offered, Date: (select a time and date from a dropdown menu), open session: (button if selected makes a session public) session title: (user types in any title for any open session) followed by the create session button" src="https://user-images.githubusercontent.com/73184313/106293249-6565c080-6213-11eb-9b11-26fc6dd1aded.png">
 
 - **My Profile:** clicking the 'my profile' button displays the user logged in's profile page. This page displays the username, optional profile picture, the user's communities, game history, and upcoming sessions. A user is also able to edit or delete their profile 
-
 <img width="402" alt="goofy profile page" src="https://user-images.githubusercontent.com/73184313/106294726-259fd880-6215-11eb-8a1e-18a232acb3f8.png">
    
-
 - **Logout:** clicking this logout button will logout of the user's profile and redirect them to the home page, where the login button replaces the logout button
 
 ### Resources
