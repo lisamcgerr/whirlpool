@@ -1,6 +1,6 @@
 # **Whirlpool**
 
-<img width="615" alt="whirlpool Logo" src="https://user-images.githubusercontent.com/73184313/106222411-1aad5f80-61a5-11eb-926f-88a21d81b97e.png">
+<img width="534" alt="whirlpool logo" src="https://user-images.githubusercontent.com/73184313/106289304-bcb56200-620e-11eb-8cb7-1ce19ed718d0.png">
 
 
 Welcome to Whirlpool Rails Application! 
@@ -27,30 +27,17 @@ Our application utilizes the following models:
 3. Run ``` bundle install ``` in your terminal 
 4. Run the ``` rails db:migrate ```  followed by ``` rails db:seed ``` to create, migrate, and seed your database with data from the Board Game Atlas API. 
 5. Run ``` rails s ``` in your terminal and begin the appplication by opening a browser to localhost:3000
-6. Begin your experience by 
+6. Begin your experience by creating a user login, explore the Whirlpool website by using the navigaton bar (top of the page) and links on each page
 
+<img width="631" alt="create new account page name: blank space, age: blank space, email: blank space, username: blank space, password: blank space, confirm password: blank space, profile picture (optional): choose file, create user button " src="https://user-images.githubusercontent.com/73184313/106289459-ef5f5a80-620e-11eb-870e-7467cbcd4887.png">
 
 ## **Menu Prompts**
 
-![Welcome to the FBI's 50 most wanted database.](https://user-images.githubusercontent.com/73184313/104022455-ecc89280-5185-11eb-8483-c73971045781.jpg)
 
   - **Access Fugitive Data:** allows users the ability to access data about age, physical features, distinguishing marks, warnings, or fugitive status using a name, fugitive ID number, or location
       - **Data Analysis:** allows users to access data about oldest fugitives, youngest fugitives, most common hair color, and the most wanted fugitive
   - **Access Crime Data:** allows users the ability to access information about the description, subject, reward, and date recorded using a crime ID, fugitive name, or location
       - **Most Common Location:** data regarding the most common location of crimes
-
-<img width="328" alt="Fugitive record iD 38 was located:
-Name: LEI GAO
-Aliases: 'Jason'
-Age: 
-Hair color: black
-Eye color: brown
-Gender: Male
-Scars and marks:
-Status: Suspect is at large
-Warning: SHOULD BE CONSIDERED AN ESCAPE RISK
-" src="https://user-images.githubusercontent.com/73184313/104024522-dd971400-5188-11eb-862c-d2a72bb3577c.png"> 
-
 - **Access Games,Communities, and Sessions:** allows users the ability to access crime and fugitive data or perform a data analysis
     - **Update Records:** allows users the ability to update crime, fugitive, and city information in the database
     - **Update Fugitive Data:** allows users the ability to update or correct any information about a fugitive
