@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :games
   resources :users
   resources :posts, only: [:create, :show]
-  resources :comments, only: [:new, :create]
+  resources :comments, only: [:create]
 
   get "/login", to: "logins#new"
   post "/login", to: "logins#create"

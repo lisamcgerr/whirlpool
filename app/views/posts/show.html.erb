@@ -1,3 +1,14 @@
 <h2><%= @post.title %></h2>
 
-<%= @post.content %>
+<p><%= @post.content %></p>
+
+<% if current_user.communities.include?(@post.community) %>
+    <p>
+        <%= form_for @comment do |f|%>
+            <%= f.label "Add Comment:" %><br>
+            <%= f.text_area :content %><br>
+            <%# f.hidden_field :community_id, value: params[:id] %>
+            <%= f.submit "Submit Comment" %>
+        <% end %>
+    </p>
+<% end %>
