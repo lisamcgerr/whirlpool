@@ -31,11 +31,11 @@ Our application utilizes the following models:
 
 <img width="631" alt="create new account page name: blank space, age: blank space, email: blank space, username: blank space, password: blank space, confirm password: blank space, profile picture (optional): choose file, create user button " src="https://user-images.githubusercontent.com/73184313/106289459-ef5f5a80-620e-11eb-870e-7467cbcd4887.png">
 
-## **Menu Prompts**
+## **Navigation Bar**
 
 
-  - **Access Fugitive Data:** allows users the ability to access data about age, physical features, distinguishing marks, warnings, or fugitive status using a name, fugitive ID number, or location
-      - **Data Analysis:** allows users to access data about oldest fugitives, youngest fugitives, most common hair color, and the most wanted fugitive
+  - **Communities:** with one click a user is able to look at the public communities index where there is a list of communities with links to each community's show page. Once on the show page the user has the ability to read the communities description and join the commuity of users.
+    - **Games:** once clicked a user is directed to the games index page where there 
   - **Access Crime Data:** allows users the ability to access information about the description, subject, reward, and date recorded using a crime ID, fugitive name, or location
       - **Most Common Location:** data regarding the most common location of crimes
 - **Access Games,Communities, and Sessions:** allows users the ability to access crime and fugitive data or perform a data analysis
