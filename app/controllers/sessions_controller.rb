@@ -49,6 +49,22 @@ class SessionsController < ApplicationController
         # byebug
     end
 
+    def join_session
+
+        session = Session.find_by(id: params[:id])
+        user_session = session.user_sessions.build(user_id: current_user.id)
+
+        if user_session.save
+            flash.alert = []
+            flash.alert << ["Welcome to the session!"]
+            redirect_to session_path(session)
+        else
+            flash.alert = []
+            flash.alert << user_session.errors.full_messages
+            redirect_to sesion_path(session)
+        end
+    end
+
     private
     def session_params
         params["session"]["date"] = generate_date(params) 

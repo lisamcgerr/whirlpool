@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="home-splash">
   <head>
     <title>GamePlanner</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -28,9 +28,9 @@
           <% end %>
       <% end %>
 
-      <%# if current_user %>
-        <%# image_tag current_user.avatar %>
-      <%# end %>
+      <% if current_user %>
+        <%= image_tag current_user.avatar, class: "nav-avatar" %>
+      <% end %>
     </nav>
     
     <ul>
@@ -41,7 +41,7 @@
       <% end %>
     </ul>
     
-    <body class="home-splash">
+    <body>
 
       <%= yield %>
       

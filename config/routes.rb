@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get "/session/:id", to: "sessions#remove_user", as: "remove_user"
 
   post "/community/:id", to: "communities#join_community", as: "join_community"
+  post "/session/:id", to: "sessions#join_session", as: "join_session"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

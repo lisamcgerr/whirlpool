@@ -1,16 +1,19 @@
         <div class="box">
-            <%= image_tag "https://storage.googleapis.com/propcart-dev.appspot.com/uploads/user/J9OdYHbR5bhfMEiIUsw3MjX6bMq1/PC01075.JPG", class: "whirlpool-image"%>
+            <%= image_tag "https://storage.googleapis.com/propcart-dev.appspot.com/uploads/user/J9OdYHbR5bhfMEiIUsw3MjX6bMq1/PC01075.JPG", 
+                class: "whirlpool-image"%>
             <h1 class="main-logo">Whirlpool</h1>
         </div>
 
         <div class="backdrop">
 
-            <p class="splash-info">Welcome to whirlpool, a platform for finding community around games.</p>
+            <p class="splash-info">
+                Welcome to whirlpool, a platform for finding community around games.
+            </p>
+                <% top_played_game = Game.top_played %>
+                <% hottest_community = Community.most_popular_community %>
 
                 <p class="splash-info" >To date, <%= User.all.count %> users have created <%= Community.all.count %> communities around <%= Game.all.count %> games and played <%= Session.all.count %> sessions.</p>
-                <h3 class="splash-highlights">Top Played Game: <%= link_to Game.top_played.title, game_path(Game.top_played) %></h3>
-                <h3 class="splash-highlights">Hottest Community: <%= link_to Community.most_popular_community.title, community_path(Community.most_popular_community) %></h3>
-                <p><%# Community.all.most_popular_community.bio  %></p>
-                <p><%# Community.all.most_popular_community.users.count  %> </p>
+                <h3 class="splash-highlights">Top Played Game: <%= link_to top_played_game.title, game_path(top_played_game) %></h3>
+                <h3 class="splash-highlights">Hottest Community: <%= link_to hottest_community.title, community_path(hottest_community) %></h3>
 
         </div>
