@@ -1,9 +1,12 @@
 <h1>Public Community Index</h1>
 
+
+<%= button_to "New Community", new_community_path, method: :get, class: "page-button" %>
+
 <ul>
-<% @communities.each do |community|%>
-    <% if community.public %>
-        <li><%= link_to community.title, community_path(community) %></li>
+    <% @communities.each do |community|%>
+        <% if community.public %>
+            <li><%= link_to community.title, community_path(community) %></li>
+        <% end %>
     <% end %>
-<% end %>
 </ul>

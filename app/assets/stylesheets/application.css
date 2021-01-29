@@ -14,6 +14,12 @@
  *= require_self
  */
 
+.page-button{
+
+   margin-left: 50px;
+
+}
+
 .game-index-list{
 
    list-style-type: none;
@@ -40,6 +46,7 @@
    border-radius: 10%;
    padding: 3px;
    margin-left: 20px;
+   display: inline-block;
 }
 
 .post-content{

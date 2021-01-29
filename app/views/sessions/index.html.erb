@@ -1,6 +1,6 @@
 <h1>Public Sessions</h1>
 
-<% @sessions.each do |session|%>
+<% @sessions.reverse.each do |session|%>
     <h3><%= link_to session.title, session_path(session) %></h3>
     <ul>
         <li>Players: <%= session.users.count %> / <%= session.game.max_players%></li>

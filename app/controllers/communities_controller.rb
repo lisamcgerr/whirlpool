@@ -6,6 +6,15 @@ class CommunitiesController < ApplicationController
         @communities = Community.all
     end
 
+    def new
+        @community = Community.new
+    end
+
+    def create
+
+        community = Community.new(community_params)
+    end
+
     def show
         @community = Community.find_by(id: params[:id])
     end
@@ -28,11 +37,17 @@ class CommunitiesController < ApplicationController
     private
 
     def community_params
-
+        params["community"]["public"] = true_or_false(params)
+        
+        params.require(:community).permit(:title, :bio, :public)
     end
 
-    # def user_community_params
-    #     params.require
-    # end
+    def true_or_false(params)
+        if params["community"]["public"].to_i == 1
+            true
+        else
+            false
+        end
+    end
 
 end
