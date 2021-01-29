@@ -2,7 +2,7 @@
 
 <%= form_tag("/user_sessions/:id", method: :delete) do %>
 
-    <h4><%= label_tag "Select Player to Remove:" %><h4>
+    <h3><%= label_tag "Select Player to Remove:" %></h3>
 
     <%= collection_select(:user_session, :user_session_id, @user_sessions, :id, :username) %>
     <%= submit_tag "Remove Player" %>

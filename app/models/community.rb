@@ -7,6 +7,5 @@ class Community < ApplicationRecord
     def self.most_popular_community
         self.all.max_by{|community| community.users.count}
     end
-
   
 end

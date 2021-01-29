@@ -23,15 +23,14 @@
           <%= button_to "New Session", new_session_path, method: :get, class: "nav-button" %>
           <%= button_to "My Profile", user_path(User.find_by(id: session[:user_id])), method: :get, class: "nav-button" %>
           <%= button_to "Logout", logout_path, method: :delete, class: "nav-button" %>
+          <% if session[:user_id] %>
+            <b>Logged in as <%= User.find_by(id: session[:user_id]).username %></b>
+          <% end %>
       <% end %>
 
-      <% if session[:user_id] %>
-        <b>Logged in as <%= User.find_by(id: session[:user_id]).username %></b>
-      <% end %>
-
-      <% if current_user %>
-        <%= image_tag current_user.avatar %>
-      <% end %>
+      <%# if current_user %>
+        <%# image_tag current_user.avatar %>
+      <%# end %>
     </nav>
     
     <ul>
@@ -41,8 +40,6 @@
         <% end %>
       <% end %>
     </ul>
-
-  
     
     <body class="home-splash">
 
