@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_01_29_154442) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.integer "community_id"
+    t.integer "post_id"
   end
 
   create_table "communities", force: :cascade do |t|
