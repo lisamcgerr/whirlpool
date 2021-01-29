@@ -42,10 +42,10 @@ Our application utilizes the following models:
 - **New Session:** this button directs the user to a page where they can create a new game session by inputting information regarding the game title, date, open session (public or private), and session title. If public, this session will be posted on the sessions index page, where other users can join the session.
 <img width="665" alt="create a game session game: (dropdown menu)selection of all the games offered, Date: (select a time and date from a dropdown menu), open session: (button if selected makes a session public) session title: (user types in any title for any open session) followed by the create session button" src="https://user-images.githubusercontent.com/73184313/106293249-6565c080-6213-11eb-9b11-26fc6dd1aded.png">
 
-- **My Profile:** clicking the 'my profile' button displays the user logged in's profile page. This page displays the username, optional profile picture, the user's communities, game history, and upcoming sessions. A user is also able to edit or delete their profile 
+- **My Profile:** clicking the 'my profile' button displays the logged in user's profile page. This page displays the username, optional profile picture, the user's communities, game history, and upcoming sessions. A user is also able to edit or delete their profile 
 <img width="402" alt="goofy profile page" src="https://user-images.githubusercontent.com/73184313/106294726-259fd880-6215-11eb-8a1e-18a232acb3f8.png">
    
-- **Logout:** clicking this logout button will logout of the user's profile and redirect them to the home page, where the login button replaces the logout button
+- **Logout:** clicking the logout button will logout of the user's profile and redirect them to the home page, where the logout button is replaced by a login button.
 
 ### Resources
 https://api.boardgameatlas.com/api/search?order_by=popularity&ascending=false&pretty=true&client_id=ewGvicQBqR 
