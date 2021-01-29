@@ -48,20 +48,18 @@
 
 .nav-button {
 
-background-color:teal;
-color: white;
-list-style: none;
-justify-content: inherit;
-text-align: center;
-text-decoration: none;
-padding: 7px 16px;
-font-size: 16px;
-margin: 4px 2px;
-cursor: pointer;
-border-radius: 5px;
-font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-
-
+   background-color:teal;
+   color: white;
+   list-style: none;
+   justify-content: inherit;
+   text-align: center;
+   text-decoration: none;
+   padding: 7px 16px;
+   font-size: 16px;
+   margin: 4px 2px;
+   cursor: pointer;
+   border-radius: 5px;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 
 }
 
@@ -111,7 +109,9 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
 
 .backdrop{
 
-   background-color:#2e8b56(0, 77, 37, 0.616);
-   /* padding: 1px;
-   border-radius: 10px; */
+   background-color: blanchedalmond;
+   padding: 1px;
+   border-radius: 10px;
+   margin-top: 60px;
+
 }
