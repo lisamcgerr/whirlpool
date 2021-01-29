@@ -1,9 +1,12 @@
 <h2><%= @game.title %></h2>
 
 <div>
-    <%= image_tag @game.thumbnail %>
+    
     <div class="description">
-        <p><%= sanitize @game.description %></p><br>
+        <p>
+            <%= image_tag @game.thumbnail %>
+            <%= sanitize @game.description %>
+        </p><br>
         <p> Minimum Age Requirement: <%= @game.min_age %></p><br>
         <p>Number of Players:<%= @game.min_players %> - <%= @game.max_players %></p><br>
         <p> Price: <%= @game.price %></p><br>

@@ -1,7 +1,10 @@
 <h1>Games Index</h1>
 
-<ul>
+<ul class="game-index-list">
     <% @games.each do |game|%>
-        <li><%= link_to game.title, game_path(game) %></li>
+        <li class="game-index-link">
+            <%= image_tag game.thumbnail, class: "game-thumbnail" %>
+            <%= link_to game.title, game_path(game) %>
+        </li>
     <% end %>
 </ul>
