@@ -40,15 +40,16 @@ count = 0
     average_playtime = (response["games"][count]["min_playtime"].to_f + response["games"][count]["max_playtime"].to_f) / 2
 
     Game.create(
+        
         title: response["games"][count]["name"],
         min_players: response["games"][count]["min_players"],
         max_players: response["games"][count]["max_players"],
         price: response["games"][count]["msrp"],
         min_age: response["games"][count]["min_age"],
-        #parse description here
         description: response["games"][count]["description"],
         avg_playtime: average_playtime,
-        rules: response["games"][count]["rules_url"]
+        rules: response["games"][count]["rules_url"],
+        thumbnail: response["games"][count]["thumb_url"]
     )
     count +=1
 end
