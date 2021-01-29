@@ -17,13 +17,16 @@
 
 .comment{
 
-   
-
+   background: rgba(202, 49, 49, 0.315);
+   border-radius: 10%;
+   padding: 3px;
+   margin-left: 20px;
 }
 
 .post-content{
 
    font-size: 28px;
+   background: rgba(137, 43, 226, 0.247);
 
 }
 
@@ -86,6 +89,7 @@ h1{
    font-family: "Lobster";
    color:indianred;
    font-size: 75px;
+   margin-left: 40px;
 }
 
 @font-face {

@@ -8,7 +8,7 @@
 <p>
     <% @post.comments.each do |comment| %>
         <%= comment.user.username %><br>
-        <%= comment.content %><br><br>
+        <div class="comment"><%= comment.content %></div><br><br>
     <% end %>
 </p>
 
@@ -21,4 +21,9 @@
             <%= f.submit "Submit Comment" %>
         <% end %>
     </p>
+<% else %>
+    <p>
+        To participate in this conversation, join this community!
+    </p>
 <% end %>
+    
