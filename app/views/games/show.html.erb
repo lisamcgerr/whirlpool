@@ -4,7 +4,7 @@
     
     <div class="description">
         <p>
-            <%= image_tag @game.thumbnail %>
+            <%= image_tag @game.thumbnail, class: "game-image" %>
             <%= sanitize @game.description %>
         </p><br>
         <p> Minimum Age Requirement: <%= @game.min_age %></p><br>
