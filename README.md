@@ -3,13 +3,13 @@
 <img width="615" alt="whirlpool Logo" src="https://user-images.githubusercontent.com/73184313/106222411-1aad5f80-61a5-11eb-926f-88a21d81b97e.png">
 
 
-Welcome to Whirlpool Rails Applicatoio! 
+Welcome to Whirlpool Rails Application! 
 
-This project was created by two students attending Flatiron School's software engineering immersive as their module two project. Information regarding the games was provdided by the Board Game Atlas database. The application uses  which allowed users to view a list of games provided by Board Game Atlas API the FBI's most wanted database to create an application that allows our user, an FBI agent, to read, analyze, input, update and remove information about fugitives and their crimes in various cities across the US. To get started, we seed our application with real-time data from the FBI's open API, allowing our application access to current information about the FBI's most wanted criminals.
+This project was created by two students attending Flatiron School's software engineering immersive as their module two project. Information regarding the games was provdided by the Board Game Atlas database. The application allows our user, a gamer, to read, analyze, input, update and remove information regarding their profile and game sessions. To get started, we seed our application with real-time data from the Board Game Atlas API, allowing our application access to current information about most currently played games.
 
 
 ## **Models and Users**
-The user in our application is a gamer who has the ability invite other users to join a sessio nand can join a gaming community. In future versions of our program, the functionality could be expanded to include online gaming links and email invitations to other potential users.
+The user in our application is a gamer who has the ability invite other users to join a session and a gaming community. In future versions of our program, the functionality could be expanded to include online gaming links and email invitations to other potential users.
 
 Our application utilizes the following models:
 
@@ -25,9 +25,9 @@ Our application utilizes the following models:
 1. This app is working with Ruby 2.6.1 ``` rvm install 2.6.1 ```
 2. Fork and clone this repository into your local environment
 3. Run ``` bundle install ``` in your terminal 
-4. Run the ``` rake prepare_database ``` to create, migrate, and seed your database with data from the FBI database. This will also being running the app
-5. Follow the prompts with your arrow key to get started. Additionally, you will need to use your keyboard to a 
-6. If at any time you exit the application, run ``` rake enter ``` in your terminal to re-enter the application
+4. Run the ``` rails db:migrate ```  followed by ``` rails db:seed ``` to create, migrate, and seed your database with data from the Board Game Atlas API. 
+5. Run ``` rails s ``` in your terminal and begin the appplication by opening a browser to localhost:3000
+6. Begin your experience by 
 
 
 ## **Menu Prompts**
